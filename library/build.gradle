@@ -1,4 +1,3 @@
-
 plugins {
     id 'com.android.library'
     id 'maven-publish'
@@ -18,17 +17,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-
-    publishing { singleVariant("release") }
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
-            groupId = 'com.github.NexusTeamOfficial'
-            artifactId = 'NexusTeamLibrary'
-            version = '1.0.0'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.NexusTeamOfficial'
+                artifactId = 'NexusTeamLibrary'
+                version = '1.0.0'
+            }
         }
     }
 }
